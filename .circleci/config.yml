@@ -64,14 +64,14 @@ jobs:
           name: Build Docker image
           command: |
             echo "Building Docker image..."
-            docker build -t $DOCKER_USERNAME/devops-demo:latest .
+            docker build -t $DOCKER_USERNAME/taskflow:latest .
       - run:
           name: Push to Docker Hub
           command: |
             echo "Logging in to Docker Hub..."
             echo $DOCKER_TOKEN | docker login -u $DOCKER_USERNAME --password-stdin
             echo "Pushing image to Docker Hub..."
-            docker push $DOCKER_USERNAME/devops-demo:latest
+            docker push $DOCKER_USERNAME/taskflow:latest
 
 # ==========================================
 # WORKFLOW - Run jobs in sequence
